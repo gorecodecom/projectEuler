@@ -10,13 +10,8 @@ public class SmallestMultiple {
     }
 
     public static void main(String[] args) {
-//        int i = 1;
-//        while (!check(i)) i++;
-//        System.out.println(i);
-
-        int number;
-        int temp;
-
-
+        int i = 1;
+        while (!check(i)) i++;
+        System.out.println(i);
     }
 }
