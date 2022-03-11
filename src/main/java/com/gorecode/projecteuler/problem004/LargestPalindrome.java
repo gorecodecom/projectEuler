@@ -18,7 +18,7 @@ public class LargestPalindrome {
     }
 
     public static int palindrome(int a, int b) {
-        int result = 0;
+        int result;
         int largest = 0;
         for (int i = a; i > 99 ; i--) {
             for (int j = b; j > 99; j--) {
@@ -28,12 +28,6 @@ public class LargestPalindrome {
                 }
             }
         }
-
-//        IntStream.range(99, a)
-//                .flatMap(i -> IntStream.range(99, b).map(x -> x * 1))
-//                .filter(x -> isPalindrome(x))
-//                .max();
-
 
         return largest;
     }
