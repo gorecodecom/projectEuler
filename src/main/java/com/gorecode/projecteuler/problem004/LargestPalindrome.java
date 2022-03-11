@@ -1,5 +1,7 @@
 package com.gorecode.projecteuler.problem004;
 
+import java.util.stream.IntStream;
+
 public class LargestPalindrome {
     public static boolean isPalindrome(int number) {
         return reverse(number) == number;
@@ -18,18 +20,11 @@ public class LargestPalindrome {
     }
 
     public static int palindrome(int a, int b) {
-        int result;
-        int largest = 0;
-        for (int i = a; i > 99 ; i--) {
-            for (int j = b; j > 99; j--) {
-                result = i * j;
-                if (isPalindrome(result)) {
-                    largest = Math.max(largest, result);
-                }
-            }
-        }
-
-        return largest;
+        return IntStream.range(100, a)
+                .flatMap(i -> IntStream.range(100, b).map(x -> x * i))
+                .filter(LargestPalindrome::isPalindrome)
+                .max()
+                .orElse(0);
     }
 
     public static void main(String[] args) {
