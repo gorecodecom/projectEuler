@@ -1,5 +1,6 @@
 package com.gorecode.projecteuler.problem004;
 
+import java.util.NoSuchElementException;
 import java.util.stream.IntStream;
 
 public class LargestPalindrome {
@@ -21,10 +22,11 @@ public class LargestPalindrome {
 
     public static int palindrome(int a, int b) {
         return IntStream.range(100, a)
-                .flatMap(i -> IntStream.range(100, b).map(x -> x * i))
+                .flatMap(i -> IntStream.range(100, b)
+                        .map(x -> x * i))
                 .filter(LargestPalindrome::isPalindrome)
                 .max()
-                .orElse(0);
+                .orElseThrow(() -> new NoSuchElementException("Außerhalb des möglichen Bereichs"));
     }
 
     public static void main(String[] args) {
