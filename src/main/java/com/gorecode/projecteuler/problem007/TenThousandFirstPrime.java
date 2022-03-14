@@ -1,11 +1,11 @@
 package com.gorecode.projecteuler.problem007;
 
 public class TenThousandFirstPrime {
-    private static boolean checkPrime(long number) {
-        long counter = 0;
-        long square = (long) Math.sqrt(number);
+    public static boolean checkPrime(int number) {
+        int counter = 0;
+        int square = (int) Math.sqrt(number);
 
-        for (long i = 1; i <= square; i++) {
+        for (int i = 1; i <= square; i++) {
             if (number % i == 0) counter ++;
             if (counter > 1) return false;
         }
@@ -13,11 +13,11 @@ public class TenThousandFirstPrime {
         return true;
     }
 
-    private  static long findLargePrime(long limit) {
-        long counter = 1;
-        long prime = 0;
+    public  static long findLargePrime(int limit) {
+        int counter = 1;
+        int prime = 0;
 
-        for (long i = 2; counter <= limit; i++) {
+        for (int i = 2; counter <= limit; i++) {
             if (checkPrime(i)) {
                 prime = i;
                 counter++;
