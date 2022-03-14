@@ -16,8 +16,8 @@ public class SmallestMultipleTest {
         System.out.println(SmallestMultiple.check(two));
         System.out.println(SmallestMultiple.check(three));
 
-//        assertFalse(SmallestMultiple.check(one));
-//        assertFalse(SmallestMultiple.check(two));
-//        assertFalse(SmallestMultiple.check(three));
+        assertFalse(SmallestMultiple.check(one));
+        assertFalse(SmallestMultiple.check(two));
+        assertFalse(SmallestMultiple.check(three));
     }
 }
